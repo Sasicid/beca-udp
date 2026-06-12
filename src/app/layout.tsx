@@ -1,11 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { EB_Garamond, Geist } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import RegistrarSW from "@/components/RegistrarSW";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+// Equivalente libre de Garamond Premier Pro, la serif institucional de udp.cl.
+const garamond = EB_Garamond({
+  variable: "--font-garamond",
   subsets: ["latin"],
 });
 
@@ -23,8 +29,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#00407a" },
-    { media: "(prefers-color-scheme: dark)", color: "#0e1520" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#161616" },
   ],
 };
 
@@ -34,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${geistSans.variable} h-full antialiased`}>
+    <html lang="es" className={`${geistSans.variable} ${garamond.variable} h-full antialiased`}>
       <body className="min-h-full">
         <Nav />
         <div className="md:pl-56">

@@ -19,7 +19,7 @@ export default async function Hoy() {
   return (
     <div className="flex flex-col gap-3">
       {sesion.demo && (
-        <p className="rounded-lg bg-udp-suave px-3 py-2 text-xs text-atenuado">
+        <p className="rounded-sm bg-udp-suave px-3 py-2 text-xs text-atenuado">
           Modo demostración con datos de ejemplo — Supabase sin configurar.
         </p>
       )}
@@ -85,7 +85,7 @@ export default async function Hoy() {
           {hitos.map((h) => (
             <Tarjeta key={h.id} href="/calendario" className="flex items-center gap-3">
               <span
-                className={`rounded-lg px-2 py-1 text-xs font-bold uppercase ${
+                className={`rounded-sm px-2 py-1 text-xs font-bold uppercase ${
                   h.tipo === "prueba"
                     ? "bg-urgente-suave text-urgente"
                     : "bg-udp-suave text-udp"

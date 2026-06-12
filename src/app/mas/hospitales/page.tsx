@@ -22,7 +22,7 @@ export default async function Hospitales() {
           <li key={h.id}>
             <Link
               href={`/mas/hospitales/${h.id}`}
-              className="block rounded-xl border border-borde bg-surface p-4 hover:border-udp-claro"
+              className="block rounded-sm border border-borde bg-surface p-4 hover:border-udp-claro"
             >
               <p className="font-semibold">{h.nombre}</p>
               <p className="text-sm text-atenuado">{h.direccion}</p>

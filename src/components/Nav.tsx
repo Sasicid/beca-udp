@@ -15,6 +15,30 @@ function activa(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname.startsWith(href);
 }
 
+/** Sello institucional: wordmark udp en rojo + nombre completo. */
+export function MarcaUDP({ compacta = false }: { compacta?: boolean }) {
+  return (
+    <span className={compacta ? "flex items-baseline gap-2" : "block"}>
+      <span
+        className={`font-sans font-extrabold lowercase leading-none tracking-tight text-udp ${
+          compacta ? "text-2xl" : "text-4xl"
+        }`}
+      >
+        udp
+      </span>
+      <span
+        className={`font-sans font-semibold uppercase leading-tight tracking-[0.08em] text-foreground ${
+          compacta ? "text-[10px]" : "mt-1 block text-[11px]"
+        }`}
+      >
+        Universidad
+        {compacta ? " " : <br />}
+        Diego Portales
+      </span>
+    </span>
+  );
+}
+
 /** Barra inferior en móvil, lateral en desktop. Áreas táctiles ≥ 44 px. */
 export default function Nav() {
   const pathname = usePathname();
@@ -22,6 +46,18 @@ export default function Nav() {
 
   return (
     <>
+      {/* Móvil: cabecera institucional */}
+      <header className="sticky top-0 z-40 border-b border-borde bg-surface md:hidden">
+        <Link href="/" className="flex min-h-12 items-center justify-between px-4">
+          <MarcaUDP compacta />
+          <span className="text-right font-serif text-sm leading-tight text-atenuado">
+            Beca Medicina
+            <br />
+            de Urgencia
+          </span>
+        </Link>
+      </header>
+
       {/* Móvil: barra inferior alcanzable con el pulgar */}
       <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-borde bg-surface pb-[env(safe-area-inset-bottom)] md:hidden">
         <ul className="flex">
@@ -47,10 +83,13 @@ export default function Nav() {
       {/* Desktop: barra lateral fija */}
       <nav className="fixed inset-y-0 left-0 z-40 hidden w-56 flex-col border-r border-borde bg-surface md:flex">
         <div className="px-5 py-6">
-          <Link href="/" className="block text-lg font-bold leading-tight text-udp">
-            Beca Medicina
-            <br />
-            de Urgencia UDP
+          <Link href="/" className="block">
+            <MarcaUDP />
+            <span className="mt-4 block border-t border-borde pt-3 font-serif text-base leading-snug">
+              Beca Medicina
+              <br />
+              de Urgencia
+            </span>
           </Link>
         </div>
         <ul className="flex flex-col gap-1 px-3">
@@ -60,7 +99,7 @@ export default function Nav() {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm ${
+                  className={`flex min-h-11 items-center gap-3 rounded-sm px-3 text-sm ${
                     act
                       ? "bg-udp-suave font-semibold text-udp"
                       : "text-foreground hover:bg-udp-suave/60"

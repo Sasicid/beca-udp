@@ -32,7 +32,7 @@ export default async function Rotacion() {
           <li key={s.id}>
             <Link
               href={`/rotacion/${s.id}`}
-              className="flex min-h-12 items-center rounded-xl border border-borde bg-surface px-4 font-medium hover:border-udp-claro"
+              className="flex min-h-12 items-center rounded-sm border border-borde bg-surface px-4 font-medium hover:border-udp-claro"
             >
               {s.nombre}
             </Link>

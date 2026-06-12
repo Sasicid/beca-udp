@@ -31,13 +31,13 @@ export default async function HospitalPage({
           href={hospital.maps_url}
           target="_blank"
           rel="noreferrer"
-          className="flex min-h-12 items-center justify-center rounded-xl bg-udp font-semibold text-white"
+          className="flex min-h-12 items-center justify-center rounded-sm bg-udp font-semibold text-white"
         >
           Abrir en Google Maps / Waze
         </a>
       )}
 
-      <section className="rounded-xl border border-borde bg-surface p-4">
+      <section className="rounded-sm border border-borde bg-surface p-4">
         <h2 className="mb-2 font-semibold">Contactos</h2>
         {hospital.contactos.length === 0 ? (
           <p className="text-sm text-atenuado">Sin contactos registrados.</p>
@@ -52,7 +52,7 @@ export default async function HospitalPage({
                 {c.telefono && (
                   <a
                     href={`tel:${c.telefono}`}
-                    className="flex min-h-11 items-center rounded-lg bg-udp px-4 text-sm font-semibold text-white"
+                    className="flex min-h-11 items-center rounded-sm bg-udp px-4 text-sm font-semibold text-white"
                   >
                     Llamar
                   </a>
@@ -63,7 +63,7 @@ export default async function HospitalPage({
         )}
       </section>
 
-      <section className="rounded-xl border border-borde bg-surface p-4">
+      <section className="rounded-sm border border-borde bg-surface p-4">
         <h2 className="mb-2 font-semibold">Indicaciones internas</h2>
         <p className="text-[0.95rem] leading-relaxed">{hospital.indicaciones}</p>
       </section>

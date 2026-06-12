@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Rotaciones, turnos, calendario, material y avisos de la Beca de Medicina de Urgencia UDP.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f4f6f9",
-    theme_color: "#00407a",
+    background_color: "#ffffff",
+    theme_color: "#c23633",
     lang: "es",
     icons: [
       { src: "/iconos/icon-192.png", sizes: "192x192", type: "image/png" },

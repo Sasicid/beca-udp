@@ -11,7 +11,7 @@ export function Tarjeta({
   children: ReactNode;
   className?: string;
 }) {
-  const base = `block rounded-xl border border-borde bg-surface p-4 ${className}`;
+  const base = `block rounded-sm border border-borde bg-surface p-4 ${className}`;
   if (href) {
     const conHover = `${base} transition-colors hover:border-udp-claro`;
     if (href.startsWith("http")) {
@@ -32,7 +32,7 @@ export function Tarjeta({
 
 export function TituloSeccion({ children }: { children: ReactNode }) {
   return (
-    <h2 className="mb-2 mt-6 text-sm font-semibold uppercase tracking-wide text-atenuado first:mt-0">
+    <h2 className="mb-2 mt-6 border-t border-borde pt-4 font-serif text-base uppercase tracking-[0.14em] first:mt-0 first:border-t-0 first:pt-0">
       {children}
     </h2>
   );
@@ -61,7 +61,7 @@ export function Chip({
 /** Pantalla vacía que indica qué hacer (spec sección 6). */
 export function Vacio({ children }: { children: ReactNode }) {
   return (
-    <p className="rounded-xl border border-dashed border-borde p-6 text-center text-sm text-atenuado">
+    <p className="rounded-sm border border-dashed border-borde p-6 text-center text-sm text-atenuado">
       {children}
     </p>
   );

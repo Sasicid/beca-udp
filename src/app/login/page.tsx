@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { MarcaUDP } from "@/components/Nav";
 import { supabaseBrowser } from "@/lib/supabase/client";
 
 const demo = !process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -50,13 +51,13 @@ export default function LoginPage() {
 
   return (
     <div className="mx-auto flex min-h-[80dvh] max-w-sm flex-col justify-center gap-6">
-      <header className="text-center">
-        <h1 className="text-2xl font-bold text-udp">Beca Medicina de Urgencia</h1>
-        <p className="mt-1 text-atenuado">Universidad Diego Portales</p>
+      <header className="flex flex-col items-center gap-4 text-center">
+        <MarcaUDP />
+        <h1 className="border-t border-borde pt-4 text-2xl">Beca Medicina de Urgencia</h1>
       </header>
 
       {demo ? (
-        <div className="rounded-xl border border-borde bg-surface p-5 text-sm leading-relaxed">
+        <div className="rounded-sm border border-borde bg-surface p-5 text-sm leading-relaxed">
           <p className="font-semibold">Modo demostración</p>
           <p className="mt-1 text-atenuado">
             Supabase aún no está configurado, así que la app corre con datos de ejemplo y
@@ -65,7 +66,7 @@ export default function LoginPage() {
           </p>
           <a
             href="/"
-            className="mt-4 flex min-h-11 items-center justify-center rounded-lg bg-udp font-semibold text-white"
+            className="mt-4 flex min-h-11 items-center justify-center rounded-sm bg-udp font-semibold text-white"
           >
             Entrar a la demo
           </a>
@@ -80,7 +81,7 @@ export default function LoginPage() {
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="min-h-11 rounded-lg border border-borde bg-surface px-3 text-base"
+              className="min-h-11 rounded-sm border border-borde bg-surface px-3 text-base"
             />
           </label>
           <label className="flex flex-col gap-1 text-sm font-medium">
@@ -90,13 +91,13 @@ export default function LoginPage() {
               autoComplete="current-password"
               value={clave}
               onChange={(e) => setClave(e.target.value)}
-              className="min-h-11 rounded-lg border border-borde bg-surface px-3 text-base"
+              className="min-h-11 rounded-sm border border-borde bg-surface px-3 text-base"
             />
           </label>
           <button
             type="submit"
             disabled={cargando}
-            className="mt-1 min-h-11 rounded-lg bg-udp font-semibold text-white disabled:opacity-60"
+            className="mt-1 min-h-11 rounded-sm bg-udp font-semibold text-white disabled:opacity-60"
           >
             Entrar
           </button>
@@ -104,12 +105,12 @@ export default function LoginPage() {
             type="button"
             onClick={enlaceMagico}
             disabled={cargando}
-            className="min-h-11 rounded-lg border border-borde bg-surface font-medium disabled:opacity-60"
+            className="min-h-11 rounded-sm border border-borde bg-surface font-medium disabled:opacity-60"
           >
             Enviarme un enlace de acceso al correo
           </button>
           {mensaje && (
-            <p role="status" className="rounded-lg bg-udp-suave p-3 text-sm">
+            <p role="status" className="rounded-sm bg-udp-suave p-3 text-sm">
               {mensaje}
             </p>
           )}

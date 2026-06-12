@@ -31,7 +31,7 @@ export default async function Avisos() {
         {vigentes.map((a) => (
           <li
             key={a.id}
-            className={`rounded-xl border bg-surface p-4 ${
+            className={`rounded-sm border bg-surface p-4 ${
               a.urgente && !a.leido ? "border-urgente bg-urgente-suave" : "border-borde"
             }`}
           >
@@ -62,7 +62,7 @@ export default async function Avisos() {
                 <form action={marcarAvisoLeido.bind(null, a.id)}>
                   <button
                     type="submit"
-                    className="min-h-9 rounded-lg border border-borde bg-surface px-3 text-xs font-medium"
+                    className="min-h-9 rounded-sm border border-borde bg-surface px-3 text-xs font-medium"
                   >
                     Marcar como leído
                   </button>
@@ -80,7 +80,7 @@ export default async function Avisos() {
           <TituloSeccion>Archivo histórico</TituloSeccion>
           <ul className="flex flex-col gap-2">
             {archivados.map((a) => (
-              <li key={a.id} className="rounded-xl border border-borde bg-surface p-4 opacity-70">
+              <li key={a.id} className="rounded-sm border border-borde bg-surface p-4 opacity-70">
                 <p className="font-medium">{a.titulo}</p>
                 <p className="mt-1 text-sm text-atenuado">{a.cuerpo}</p>
               </li>

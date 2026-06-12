@@ -83,7 +83,7 @@ export default async function FichaPage({
                     {c.telefono && (
                       <a
                         href={`tel:${c.telefono}`}
-                        className="flex min-h-11 items-center rounded-lg bg-udp px-4 text-sm font-semibold text-white"
+                        className="flex min-h-11 items-center rounded-sm bg-udp px-4 text-sm font-semibold text-white"
                       >
                         Llamar
                       </a>
@@ -138,7 +138,7 @@ function Seccion({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-xl border border-borde bg-surface p-4">
+    <section className="rounded-sm border border-borde bg-surface p-4">
       <h2 className="mb-2 font-semibold">
         <span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-udp-suave text-xs font-bold text-udp">
           {n}

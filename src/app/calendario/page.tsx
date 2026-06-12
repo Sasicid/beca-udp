@@ -36,16 +36,16 @@ export default async function Calendario({
     <div className="flex flex-col gap-3">
       <header className="flex items-center justify-between">
         <h1 className="text-xl font-bold">Calendario</h1>
-        <nav className="flex rounded-lg border border-borde bg-surface p-0.5 text-sm">
+        <nav className="flex rounded-sm border border-borde bg-surface p-0.5 text-sm">
           <Link
             href="/calendario"
-            className={`min-h-10 rounded-md px-3 leading-10 ${!verTodo ? "bg-udp-suave font-semibold text-udp" : "text-atenuado"}`}
+            className={`min-h-10 rounded-sm px-3 leading-10 ${!verTodo ? "bg-udp-suave font-semibold text-udp" : "text-atenuado"}`}
           >
             Personal
           </Link>
           <Link
             href="/calendario?vista=todo"
-            className={`min-h-10 rounded-md px-3 leading-10 ${verTodo ? "bg-udp-suave font-semibold text-udp" : "text-atenuado"}`}
+            className={`min-h-10 rounded-sm px-3 leading-10 ${verTodo ? "bg-udp-suave font-semibold text-udp" : "text-atenuado"}`}
           >
             Ver todo
           </Link>
@@ -128,7 +128,7 @@ async function VistaPersonal({ meses }: { meses: string[] }) {
               <div className="flex items-center justify-between">
                 <p className="font-medium">{e.titulo}</p>
                 <span
-                  className={`rounded-lg px-2 py-0.5 text-xs font-bold uppercase ${
+                  className={`rounded-sm px-2 py-0.5 text-xs font-bold uppercase ${
                     e.tipo === "prueba"
                       ? "bg-urgente-suave text-urgente"
                       : "bg-udp-suave text-udp"
@@ -169,7 +169,7 @@ async function Matriz({ meses }: { meses: string[] }) {
       {/* Móvil: acordeón por alumno */}
       <div className="flex flex-col gap-2 md:hidden">
         {activos.map((al) => (
-          <details key={al.id} className="rounded-xl border border-borde bg-surface">
+          <details key={al.id} className="rounded-sm border border-borde bg-surface">
             <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between px-4 font-medium">
               {al.nombre}
               <span className="text-atenuado">›</span>
@@ -194,7 +194,7 @@ async function Matriz({ meses }: { meses: string[] }) {
       </div>
 
       {/* Desktop: matriz completa */}
-      <div className="hidden overflow-x-auto rounded-xl border border-borde bg-surface md:block">
+      <div className="hidden overflow-x-auto rounded-sm border border-borde bg-surface md:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-borde text-left">

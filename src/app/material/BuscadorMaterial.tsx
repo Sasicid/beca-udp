@@ -50,14 +50,14 @@ export default function BuscadorMaterial({
         placeholder="Buscar por título o tema…"
         value={texto}
         onChange={(e) => setTexto(e.target.value)}
-        className="min-h-11 w-full rounded-lg border border-borde bg-surface px-3 text-base"
+        className="min-h-11 w-full rounded-sm border border-borde bg-surface px-3 text-base"
         aria-label="Buscar material"
       />
       <div className="flex gap-2">
         <select
           value={tipo}
           onChange={(e) => setTipo(e.target.value as TipoMaterial | "")}
-          className="min-h-11 flex-1 rounded-lg border border-borde bg-surface px-2 text-sm"
+          className="min-h-11 flex-1 rounded-sm border border-borde bg-surface px-2 text-sm"
           aria-label="Filtrar por tipo"
         >
           <option value="">Todos los tipos</option>
@@ -70,7 +70,7 @@ export default function BuscadorMaterial({
         <select
           value={servicioId}
           onChange={(e) => setServicioId(e.target.value)}
-          className="min-h-11 flex-1 rounded-lg border border-borde bg-surface px-2 text-sm"
+          className="min-h-11 flex-1 rounded-sm border border-borde bg-surface px-2 text-sm"
           aria-label="Filtrar por rotación"
         >
           <option value="">Todas las rotaciones</option>

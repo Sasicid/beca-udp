@@ -1,33 +1,34 @@
 @import "tailwindcss";
 
-/* Paleta provisoria: azul institucional UDP + grises neutros (spec sección 6).
-   Los códigos definitivos quedan sujetos al manual de marca de Comunicaciones UDP. */
+/* Identidad UDP tomada de udp.cl: rojo institucional #c23633, blanco, grises
+   neutros (#32373c) y serif estilo Garamond en títulos. Los códigos definitivos
+   quedan sujetos al manual de marca de Comunicaciones UDP. */
 :root {
-  --background: #f4f6f9;
-  --foreground: #16202c;
+  --background: #ffffff;
+  --foreground: #232323;
   --surface: #ffffff;
-  --borde: #dde3ea;
-  --atenuado: #5b6b7c;
-  --udp: #00407a;
-  --udp-claro: #145e9e;
-  --udp-suave: #e3edf6;
-  --urgente: #b91c1c;
-  --urgente-suave: #fdeaea;
+  --borde: #e3e3e0;
+  --atenuado: #6b6f73;
+  --udp: #c23633;
+  --udp-claro: #a02b29;
+  --udp-suave: #f9efee;
+  --urgente: #a31815;
+  --urgente-suave: #fbecea;
 }
 
 /* Modo oscuro: en un turno de noche se agradece. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0e1520;
-    --foreground: #e7edf4;
-    --surface: #18222f;
-    --borde: #2a3848;
-    --atenuado: #93a4b5;
-    --udp: #6aa7dd;
-    --udp-claro: #8fbde7;
-    --udp-suave: #1b2a3c;
-    --urgente: #f1808a;
-    --urgente-suave: #3a1d22;
+    --background: #161616;
+    --foreground: #ece9e4;
+    --surface: #1f1f1f;
+    --borde: #353535;
+    --atenuado: #a3a09b;
+    --udp: #e0716d;
+    --udp-claro: #eb8d89;
+    --udp-suave: #2e2020;
+    --urgente: #f1827d;
+    --urgente-suave: #3a201f;
   }
 }
 
@@ -43,6 +44,7 @@
   --color-urgente: var(--urgente);
   --color-urgente-suave: var(--urgente-suave);
   --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-garamond);
 }
 
 html {
@@ -53,4 +55,10 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Títulos de página en serif, como la gráfica institucional UDP. */
+h1 {
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em;
 }

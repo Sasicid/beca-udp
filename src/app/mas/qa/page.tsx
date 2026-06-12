@@ -33,7 +33,7 @@ export default async function QA() {
               .filter((p) => (p.tema || "General") === tema)
               .map((p) => (
                 <li key={p.id}>
-                  <details className="rounded-xl border border-borde bg-surface">
+                  <details className="rounded-sm border border-borde bg-surface">
                     <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-2 px-4 py-2 font-medium">
                       <span>
                         {p.destacada && <span aria-label="Destacada">★ </span>}
@@ -51,7 +51,7 @@ export default async function QA() {
         </section>
       ))}
 
-      <section className="mt-4 rounded-xl border border-borde bg-surface p-4">
+      <section className="mt-4 rounded-sm border border-borde bg-surface p-4">
         <h2 className="font-semibold">¿Tienes una duda?</h2>
         <p className="mt-1 text-sm text-atenuado">
           Tu pregunta llega a una cola privada de Coordinación. Si se publica, aparecerá
@@ -63,11 +63,11 @@ export default async function QA() {
             required
             rows={3}
             placeholder="Escribe tu pregunta…"
-            className="w-full rounded-lg border border-borde bg-background p-3 text-base"
+            className="w-full rounded-sm border border-borde bg-background p-3 text-base"
           />
           <button
             type="submit"
-            className="min-h-11 self-end rounded-lg bg-udp px-5 font-semibold text-white"
+            className="min-h-11 self-end rounded-sm bg-udp px-5 font-semibold text-white"
           >
             Enviar pregunta
           </button>

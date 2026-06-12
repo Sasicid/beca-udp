@@ -28,7 +28,7 @@ export default async function Mas() {
           <li key={e.href}>
             <Link
               href={e.href}
-              className="flex min-h-14 items-center justify-between rounded-xl border border-borde bg-surface px-4 hover:border-udp-claro"
+              className="flex min-h-14 items-center justify-between rounded-sm border border-borde bg-surface px-4 hover:border-udp-claro"
             >
               <span>
                 <span className="block font-medium">{e.titulo}</span>
@@ -40,7 +40,7 @@ export default async function Mas() {
         ))}
       </ul>
 
-      <section className="mt-4 rounded-xl border border-borde bg-surface p-4">
+      <section className="mt-4 rounded-sm border border-borde bg-surface p-4">
         <h2 className="font-semibold">Mi perfil</h2>
         <p className="mt-1 text-sm">
           {sesion.nombre}
