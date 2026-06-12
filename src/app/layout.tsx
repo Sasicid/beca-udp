@@ -42,6 +42,13 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${geistSans.variable} ${garamond.variable} h-full antialiased`}>
       <body className="min-h-full">
+        {/* Aplica el tema guardado antes del primer pintado para evitar el destello. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('tema');if(t==='claro'||t==='oscuro')document.documentElement.dataset.tema=t}catch(e){}",
+          }}
+        />
         <Nav />
         <div className="md:pl-56">
           <main className="mx-auto min-h-dvh w-full max-w-3xl px-4 pb-24 pt-4 md:py-8">

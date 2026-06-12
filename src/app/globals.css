@@ -16,9 +16,25 @@
   --urgente-suave: #fbecea;
 }
 
-/* Modo oscuro: en un turno de noche se agradece. */
+/* Modo oscuro: en un turno de noche se agradece. Se activa a mano
+   (data-tema="oscuro", elegido en Más → Apariencia) o siguiendo al sistema
+   cuando no hay preferencia guardada. Mismos valores en ambos bloques. */
+:root[data-tema="oscuro"] {
+  --background: #161616;
+  --foreground: #ece9e4;
+  --surface: #1f1f1f;
+  --borde: #353535;
+  --atenuado: #a3a09b;
+  --udp: #e0716d;
+  --udp-claro: #eb8d89;
+  --udp-suave: #2e2020;
+  --urgente: #f1827d;
+  --urgente-suave: #3a201f;
+  color-scheme: dark;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-tema="claro"]) {
     --background: #161616;
     --foreground: #ece9e4;
     --surface: #1f1f1f;
@@ -29,6 +45,7 @@
     --udp-suave: #2e2020;
     --urgente: #f1827d;
     --urgente-suave: #3a201f;
+    color-scheme: dark;
   }
 }
 

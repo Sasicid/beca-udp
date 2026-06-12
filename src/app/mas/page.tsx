@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import SelectorTema from "@/components/SelectorTema";
 import { etiquetaAnioBeca } from "@/lib/beca";
 import { getSesion } from "@/lib/data";
 
@@ -41,6 +42,14 @@ export default async function Mas() {
       </ul>
 
       <section className="mt-4 rounded-sm border border-borde bg-surface p-4">
+        <h2 className="font-semibold">Apariencia</h2>
+        <p className="mb-3 mt-1 text-sm text-atenuado">
+          El modo noche cuida la vista en los turnos.
+        </p>
+        <SelectorTema />
+      </section>
+
+      <section className="rounded-sm border border-borde bg-surface p-4">
         <h2 className="font-semibold">Mi perfil</h2>
         <p className="mt-1 text-sm">
           {sesion.nombre}

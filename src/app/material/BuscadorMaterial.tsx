@@ -15,6 +15,21 @@ const TIPOS: { valor: TipoMaterial; etiqueta: string }[] = [
 
 const DIAS_RECIENTE = 14;
 
+// Dominios servidos por las suscripciones del Sistema de Bibliotecas UDP.
+const DOMINIOS_BIBLIOTECA_UDP = [
+  "sibudp.idm.oclc.org",
+  "clinicalkey",
+  "accessmedicina.mhmedical.com",
+  "ebscohost.com",
+  "ovid.com",
+  "doi.org",
+  "sciencedirect.com",
+];
+
+function esViaBibliotecaUDP(url: string | null): boolean {
+  return url != null && DOMINIOS_BIBLIOTECA_UDP.some((d) => url.includes(d));
+}
+
 export default function BuscadorMaterial({
   materiales,
   servicios,
@@ -108,7 +123,7 @@ function Lista({ items, servicios }: { items: Material[]; servicios: Servicio[] 
       {items.map((m) => {
         const servicio = m.servicio_id ? porId.get(m.servicio_id) : undefined;
         const etiquetaTipo = TIPOS.find((t) => t.valor === m.tipo)?.etiqueta ?? m.tipo;
-        const esBibliotecaUDP = m.tipo === "paper" && m.url_externa;
+        const esBibliotecaUDP = esViaBibliotecaUDP(m.url_externa);
         return (
           <li key={m.id}>
             <Tarjeta

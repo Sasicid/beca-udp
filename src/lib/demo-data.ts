@@ -120,12 +120,17 @@ export const demoAvisos: Aviso[] = [
   { id: "av3", titulo: "Nuevo protocolo de sepsis disponible", cuerpo: "Se subió a Material el protocolo actualizado de manejo de sepsis del servicio.", urgente: false, fijado: false, archivado: false, creado_en: new Date(Date.now() - 6 * 864e5).toISOString(), leido: true },
 ];
 
+// Los recursos de bases pagadas se enlazan vía biblioteca UDP (spec 3.5);
+// solo el material propio o institucional va como archivo.
 export const demoMateriales: Material[] = [
   { id: "mat1", titulo: "Protocolo de manejo de sepsis 2026", tipo: "protocolo", tema: "Sepsis", servicio_id: "srv-ua", archivo_path: "protocolos/sepsis-2026.pdf", url_externa: null, tamano: 2_400_000, archivado: false, creado_en: new Date(Date.now() - 6 * 864e5).toISOString() },
   { id: "mat2", titulo: "Ventilación mecánica: modos básicos", tipo: "presentacion", tema: "Ventilación mecánica", servicio_id: "srv-uci", archivo_path: "presentaciones/vm-basica.pdf", url_externa: null, tamano: 8_900_000, archivado: false, creado_en: new Date(Date.now() - 20 * 864e5).toISOString() },
-  { id: "mat3", titulo: "Surviving Sepsis Campaign 2021 (vía biblioteca UDP)", tipo: "paper", tema: "Sepsis", servicio_id: null, archivo_path: null, url_externa: "https://doi.org/10.1007/s00134-021-06506-y", tamano: null, archivado: false, creado_en: new Date(Date.now() - 30 * 864e5).toISOString() },
+  { id: "mat3", titulo: "Surviving Sepsis Campaign 2021 — guía internacional (DOI, vía biblioteca UDP)", tipo: "paper", tema: "Sepsis", servicio_id: null, archivo_path: null, url_externa: "https://doi.org/10.1007/s00134-021-06506-y", tamano: null, archivado: false, creado_en: new Date(Date.now() - 30 * 864e5).toISOString() },
   { id: "mat4", titulo: "Guía de manejo del trauma raquimedular", tipo: "guia", tema: "Trauma", servicio_id: "srv-trauma", archivo_path: "guias/trm.pdf", url_externa: null, tamano: 1_100_000, archivado: false, creado_en: new Date(Date.now() - 60 * 864e5).toISOString() },
-  { id: "mat5", titulo: "Video: secuencia de intubación rápida", tipo: "enlace", tema: "Vía aérea", servicio_id: "srv-anestesia", archivo_path: null, url_externa: "https://www.youtube.com/watch?v=ejemplo", tamano: null, archivado: false, creado_en: new Date(Date.now() - 10 * 864e5).toISOString() },
+  { id: "mat5", titulo: "Tintinalli. Medicina de urgencias (Access Medicina, vía UDP)", tipo: "enlace", tema: "Urgencia general", servicio_id: "srv-ua", archivo_path: null, url_externa: "https://accessmedicina.mhmedical.com/books.aspx?view=library", tamano: null, archivado: false, creado_en: new Date(Date.now() - 10 * 864e5).toISOString() },
+  { id: "mat6", titulo: "Harrison. Principios de Medicina Interna (Access Medicina, vía UDP)", tipo: "enlace", tema: "Medicina interna", servicio_id: null, archivo_path: null, url_externa: "https://accessmedicina.mhmedical.com/book.aspx?bookid=3553", tamano: null, archivado: false, creado_en: new Date(Date.now() - 45 * 864e5).toISOString() },
+  { id: "mat7", titulo: "Rosen's Emergency Medicine (ClinicalKey, vía UDP)", tipo: "enlace", tema: "Urgencia general", servicio_id: "srv-ua", archivo_path: null, url_externa: "https://www.clinicalkey.es/#!/browse/books", tamano: null, archivado: false, creado_en: new Date(Date.now() - 50 * 864e5).toISOString() },
+  { id: "mat8", titulo: "Shock indiferenciado en adultos — revisión UpToDate (vía UDP)", tipo: "enlace", tema: "Reanimación", servicio_id: "srv-uci", archivo_path: null, url_externa: "https://sibudp.idm.oclc.org/login?url=https://www.uptodate.com/contents/search", tamano: null, archivado: false, creado_en: new Date(Date.now() - 8 * 864e5).toISOString() },
 ];
 
 export const demoPreguntas: Pregunta[] = [
