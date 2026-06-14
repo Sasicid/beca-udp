@@ -13,7 +13,10 @@ export function Tarjeta({
 }) {
   const base = `block rounded-sm border border-borde bg-surface p-4 ${className}`;
   if (href) {
-    const conHover = `${base} transition-colors hover:border-udp-claro`;
+    // Transición específica (no `all`), ease-out, elevación leve al pasar el cursor.
+    const conHover =
+      `${base} [transition:border-color_180ms_ease-out,box-shadow_180ms_ease-out,transform_180ms_ease-out] ` +
+      `hover:border-udp-claro hover:-translate-y-0.5 hover:shadow-[0_6px_20px_-12px_rgba(0,0,0,0.35)]`;
     if (href.startsWith("http")) {
       return (
         <a href={href} target="_blank" rel="noreferrer" className={conHover}>
@@ -55,6 +58,18 @@ export function Chip({
       )}
       {children}
     </span>
+  );
+}
+
+/** Bloque de carga: imita la forma del contenido, no un spinner suelto. */
+export function CargandoLista({ filas = 4, titulo = true }: { filas?: number; titulo?: boolean }) {
+  return (
+    <div className="flex flex-col gap-3" aria-busy="true" aria-label="Cargando">
+      {titulo && <span className="skeleton h-7 w-40" />}
+      {Array.from({ length: filas }).map((_, i) => (
+        <span key={i} className="skeleton h-20 w-full rounded-sm" />
+      ))}
+    </div>
   );
 }
 

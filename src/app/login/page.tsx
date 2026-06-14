@@ -66,7 +66,7 @@ export default function LoginPage() {
           </p>
           <a
             href="/"
-            className="mt-4 flex min-h-11 items-center justify-center rounded-sm bg-udp font-semibold text-white"
+            className="mt-4 flex min-h-11 items-center justify-center rounded-sm bg-udp font-semibold text-white transition-colors hover:bg-udp-claro"
           >
             Entrar a la demo
           </a>
@@ -97,7 +97,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={cargando}
-            className="mt-1 min-h-11 rounded-sm bg-udp font-semibold text-white disabled:opacity-60"
+            className="mt-1 min-h-11 rounded-sm bg-udp font-semibold text-white transition-colors hover:bg-udp-claro disabled:opacity-60"
           >
             Entrar
           </button>

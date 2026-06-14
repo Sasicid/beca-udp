@@ -31,7 +31,7 @@ export default async function HospitalPage({
           href={hospital.maps_url}
           target="_blank"
           rel="noreferrer"
-          className="flex min-h-12 items-center justify-center rounded-sm bg-udp font-semibold text-white"
+          className="flex min-h-12 items-center justify-center rounded-sm bg-udp font-semibold text-white transition-colors hover:bg-udp-claro"
         >
           Abrir en Google Maps / Waze
         </a>
@@ -52,7 +52,7 @@ export default async function HospitalPage({
                 {c.telefono && (
                   <a
                     href={`tel:${c.telefono}`}
-                    className="flex min-h-11 items-center rounded-sm bg-udp px-4 text-sm font-semibold text-white"
+                    className="flex min-h-11 items-center rounded-sm bg-udp px-4 text-sm font-semibold text-white transition-colors hover:bg-udp-claro"
                   >
                     Llamar
                   </a>

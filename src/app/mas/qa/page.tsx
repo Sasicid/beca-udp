@@ -67,7 +67,7 @@ export default async function QA() {
           />
           <button
             type="submit"
-            className="min-h-11 self-end rounded-sm bg-udp px-5 font-semibold text-white"
+            className="min-h-11 self-end rounded-sm bg-udp px-5 font-semibold text-white transition-colors hover:bg-udp-claro"
           >
             Enviar pregunta
           </button>

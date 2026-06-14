@@ -83,7 +83,7 @@ export default async function FichaPage({
                     {c.telefono && (
                       <a
                         href={`tel:${c.telefono}`}
-                        className="flex min-h-11 items-center rounded-sm bg-udp px-4 text-sm font-semibold text-white"
+                        className="flex min-h-11 items-center rounded-sm bg-udp px-4 text-sm font-semibold text-white transition-colors hover:bg-udp-claro"
                       >
                         Llamar
                       </a>

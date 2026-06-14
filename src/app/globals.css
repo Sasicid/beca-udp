@@ -78,4 +78,54 @@ body {
 h1 {
   font-family: var(--font-serif);
   letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+/* --- Pulido (impeccable + emil-design-eng) --- */
+
+/* Foco visible coherente para teclado: anillo en el acento, nunca outline feo. */
+:focus-visible {
+  outline: 2px solid var(--udp);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Press feedback: nada en el mundo real responde sin hundirse un poco. */
+@media (hover: hover) {
+  a:active,
+  button:active {
+    transform: scale(0.985);
+  }
+}
+
+/* Skeleton de carga (pulso suave) en vez de spinners centrados. */
+@keyframes pulso {
+  50% {
+    opacity: 0.45;
+  }
+}
+.skeleton {
+  background: var(--borde);
+  border-radius: 2px;
+  animation: pulso 1.4s ease-in-out infinite;
+}
+
+/* La accesibilidad no es opcional: sin movimiento, todo aparece al instante.
+   (product.md: nada de secuencias de carga coreografiadas; el motion comunica
+   estado, no decora.) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  a:active,
+  button:active {
+    transform: none;
+  }
 }
