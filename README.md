@@ -7,6 +7,27 @@ qué se viene encima. Construido según la **especificación v2** (junio 2026).
 **Stack**: Next.js 16 (App Router) + Tailwind 4 + Supabase (Postgres, Auth, Storage, RLS).
 Mobile first, PWA instalable con offline básico.
 
+## Enlaces del proyecto
+
+- **Sitio en vivo:** <https://beca-udp.vercel.app> (corre en modo demo con datos de
+  ejemplo hasta conectar Supabase)
+- **Código:** <https://github.com/Sasicid/beca-udp>
+
+## Seguir editando
+
+1. Clonar: `git clone https://github.com/Sasicid/beca-udp.git`
+2. `npm install` y `npm run dev` → editar; cada cambio se ve al guardar.
+3. `git push` a `main` → Vercel redepliega el sitio en vivo solo en ~1 minuto.
+
+## Usarla como administrador (Coordinador)
+
+El rol de Coordinador ya existe en el modelo de datos y las reglas de seguridad
+(escritura solo para `coordinador`). Para activarlo hace falta conectar Supabase
+(siguiente sección) y, en el paso 4, fijar tu correo institucional con rol
+`coordinador`. El **panel de edición del Coordinador** (matriz editable, gestión de
+alumnos/avisos/material) es el siguiente bloque de trabajo pendiente; ver
+[Estado vs. especificación](#estado-vs-especificación).
+
 ## Correr en local (modo demo)
 
 Sin configurar nada, la app corre con datos de ejemplo y sin login:
